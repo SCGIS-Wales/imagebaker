@@ -1,0 +1,51 @@
+team:
+  name: "squad1"
+container_image:
+  name: "r-402_py-311"
+  post_build:
+    is_enabled: "yes"
+    commands:
+      - "/bin/bash custom_script.sh"
+  tag: "1.0.0"
+  os:
+    distribution: "ubuntu"
+    version: "22.04"
+    force_os_update: "yes"
+    os_packages:
+      - git
+      - libcurl4-openssl-dev
+      - libfontconfig1-dev
+      - libfreetype6-dev
+      - libfribidi-dev
+      - libgit2-dev
+      - libharfbuzz-dev
+      - libicu-dev
+      - libicu-dev
+      - libjpeg-dev
+      - libpng-dev
+      - libssl-dev
+      - libtiff-dev
+      - libxml2-dev
+      - make
+      - pandoc
+      - vim
+      - zlib1g-dev
+      - libpng-dev
+      - python3
+  components: 
+    r:
+      is_enabled: "yes"
+      version: "4.0.2"
+      cran_uri: "http://cran.us.r-project.org"
+      r_packages:
+        - devtools
+        - Rcpp
+        - rsconnect
+        - shiny
+        - reticulate
+    python:
+      is_enabled: "yes"
+      version: "3.11.3"
+      py_packages:
+        - rsconnect
+
